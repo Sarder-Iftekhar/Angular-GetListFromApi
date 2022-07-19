@@ -11,10 +11,30 @@ import { EmployeeApiService } from './Services/employee-api.service';
 export class AppComponent {
   title = 'AngularCrud';
   constructor(private _employeeApiService:EmployeeApiService){}
+  
+  listEmployees: any = [];
+  empId : string = "1";
+  empInfo: any;
 
 
-  listEmployees:any;
   ngOnInit(){
+    this.getAllEmployees();
+    this.getEmpById();   
+  }
+
+  getEmpById() {
+    this._employeeApiService.getEmployeesByParameter(this.empId).subscribe
+    (
+      data=>
+      {
+        this.empInfo=data;
+        console.log('empInfo ', this.empInfo);
+        
+      }
+    )
+  }
+
+  getAllEmployees(){
     this._employeeApiService.getEmployees().subscribe
     (
       data=>
@@ -23,5 +43,7 @@ export class AppComponent {
       }
     )
   }
+  
+
 
 }

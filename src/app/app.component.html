@@ -1,3 +1,4 @@
+<h1>Get All Employee</h1>
 <table >
   <tr>
     <th>Employee ID </th>
@@ -7,10 +8,28 @@
     <th>Designation</th>
   </tr>
   <tr *ngFor="let emp of listEmployees">
-    <td>{{emp.employeeId}}</td>
-    <td>{{emp.employeeFirstName}}</td>
-    <td>{{emp.employeeLastName}}</td>
-    <td>{{emp.salary}}</td>
-    <td>{{emp.designation}}</td>
+    <td>{{emp?.employeeId}}</td>
+    <td>{{emp?.employeeFirstName}}</td>
+    <td>{{emp?.employeeLastName}}</td>
+    <td>{{emp?.salary}}</td>
+    <td>{{emp?.designation}}</td>
   </tr>
 </table>
+<h1>Get Employee by parameter</h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>employeeFirstName</th>
+    <th>employeeLastName</th>
+    <th>Salary</th>
+    <th>Designation</th>
+  </tr>
+  <tr>
+    <td>{{empInfo?.employeeId}}</td>
+    <td>{{empInfo?.employeeFirstName}}</td>
+    <td>{{empInfo?.employeeLastName}}</td>
+    <td>{{empInfo?.salary}}</td>
+    <td>{{empInfo?.designation}}</td>
+  </tr>
+</table>
+             
