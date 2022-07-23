@@ -1,3 +1,6 @@
+
+<app-contact></app-contact>
+
 <h1>Get All Employee</h1>
 <table >
   <tr>
@@ -32,4 +35,20 @@
     <td>{{empInfo?.designation}}</td>
   </tr>
 </table>
+
+
+
+<h1>Post Api</h1>
+
+<form #usersForm="ngForm" (ngSubmit)="getUserFormData(usersForm.value)">
+  <input type="text" name="employeeFirstName" ngModel placeholder="enter first name">
+  <br><br>
+  <input type="text" name="employeeLastName" ngModel placeholder="enter last name">
+  <br><br>
+  <input type="number" name="salary" ngModel placeholder="enter salary ">
+  <br><br>
+  <input type="text" name="designation" ngModel placeholder="enter designation ">
+  <br><br>
+  <button type="submit">Add New User</button>
+</form>
              

@@ -15,11 +15,22 @@ export class AppComponent {
   listEmployees: any = [];
   empId : string = "1";
   empInfo: any;
+  objPost:any;
+  data:any;
 
 
   ngOnInit(){
     this.getAllEmployees();
-    this.getEmpById();   
+    this.getEmpById();
+    //this.getUserFormData(this.listEmployees)
+    //var opost = new Employees();
+    this.getUserFormData(this.data);
+
+   
+
+   
+
+
   }
 
   getEmpById() {
@@ -43,7 +54,28 @@ export class AppComponent {
       }
     )
   }
+
+  //for post data to the api
+
+  getUserFormData(val:any)
+  {
+    // var opost = new Employees()
   
+    // opost.designation='as',
+    // opost.employeeFirstName='sa',
+    // opost.employeeLastName='as',
+    // opost.salary=10000,
+    console.warn(val)
+     
+    this._employeeApiService.saveEmployees(val).subscribe(data=>{
+        //console.warn(result)
+        this.objPost=data;
+        console.warn(data)
+
+      }
+    )
+   
+  } 
 
 
 }

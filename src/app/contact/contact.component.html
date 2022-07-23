@@ -1,0 +1,26 @@
+
+<form #usersForm="ngForm" (ngSubmit)="getUserFormData(usersForm.value)">
+    <input type="text" name="name" ngModel placeholder="enter name">
+    <br><br>
+    <input type="text" name="email" ngModel placeholder="enter email">
+    <br><br>
+    <input type="text" name="phone" ngModel placeholder="enter phone ">
+    <br><br>
+    <button type="submit">Add New Contatct</button>
+  </form>
+           
+<h1>Get All Contact</h1>
+<table >
+  <tr>
+    <th>Contact ID </th>
+    <th>Name</th>
+    <th>Email</th>
+    <th> Phone</th>
+  </tr>
+  <tr *ngFor="let cont of listGet">
+    <td>{{cont?.id}}</td>
+    <td>{{cont?.name}}</td>
+    <td>{{cont?.email}}</td>
+    <td>{{cont?.phone}}</td>
+  </tr>
+</table>
