@@ -1,26 +1,66 @@
 
 <form #usersForm="ngForm" (ngSubmit)="getUserFormData(usersForm.value)">
-    <input type="text" name="name" ngModel placeholder="enter name">
+    <input type="number" name="userId" ngModel placeholder="enter userId">
+    <br><br>
+    <input type="text" name="firstName" ngModel placeholder="enter firstName">
+    <br><br>
+    <input type="text" name="middleName" ngModel placeholder="enter middleName">
+    <br><br>
+    <input type="text" name="lastName" ngModel placeholder="enter lastName">
     <br><br>
     <input type="text" name="email" ngModel placeholder="enter email">
     <br><br>
     <input type="text" name="phone" ngModel placeholder="enter phone ">
     <br><br>
+    <input type="text" name="address" ngModel placeholder="enter address ">
+    <br><br>
+    <input type="text" name="city" ngModel placeholder="enter city ">
+    <br><br>
     <button type="submit">Add New Contatct</button>
   </form>
-           
+      
 <h1>Get All Contact</h1>
 <table >
   <tr>
-    <th>Contact ID </th>
-    <th>Name</th>
+    <!-- <th>Contact ID </th> -->
+    <th>User ID </th>
+    <th>Name  </th>
+    <!-- <th>middleName </th>
+    <th>lastName </th> -->
     <th>Email</th>
     <th> Phone</th>
+    <th> birthdate</th>
+    <th> relationship</th>
+    <th> Address </th>
+    <th> City</th>
+    <!-- <th> postalCode</th>
+    <th> Phone</th>
+    <th> Phone</th>
+    <th> Phone</th>
+    <th> Phone</th>
+    <th> Phone</th>
+    <th> Phone</th> -->
+    
   </tr>
   <tr *ngFor="let cont of listGet">
-    <td>{{cont?.id}}</td>
-    <td>{{cont?.name}}</td>
+    <!-- <td>{{cont?.contactId}}</td> -->
+    <td>{{cont?.userId}}</td>
+    <td>{{cont?.firstName}}&nbsp; {{cont?.middleName}} &nbsp; {{cont?.lastName}}</td>
+    <!-- <td>{{cont?.middleName}}</td>
+    <td>{{cont?.lastName}}</td> -->
     <td>{{cont?.email}}</td>
+    <td>{{cont?.birthdate}}</td>
     <td>{{cont?.phone}}</td>
+    <td>{{cont?.relationship}}</td>
+    <td>{{cont?.address}}</td>
+    <td>{{cont?.city}}</td>
+    <!-- <td>{{cont?.postalCode}}</td>
+    <td>{{cont?.jobTitle}}</td>
+    <td>{{cont?.company}}</td>
+    <td>{{cont?.department}}</td>
+    <td>{{cont?.event}}</td>
+    <td>{{cont?.website}}</td>
+    <td>{{cont?.notes}}</td> -->
   </tr>
 </table>
+

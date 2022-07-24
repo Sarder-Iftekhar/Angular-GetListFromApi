@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Employees } from './Classes/employees';
-import { EmployeeApiService } from './Services/employee-api.service';
+//import { EmployeeApiService } from './Services/employee-api.service';
 
 @Component({
 
@@ -10,72 +10,72 @@ import { EmployeeApiService } from './Services/employee-api.service';
 })
 export class AppComponent {
   title = 'AngularCrud';
-  constructor(private _employeeApiService:EmployeeApiService){}
+  // constructor(private _employeeApiService:EmployeeApiService){}
   
-  listEmployees: any = [];
-  empId : string = "1";
-  empInfo: any;
-  objPost:any;
-  data:any;
+  // listEmployees: any = [];
+  // empId : string = "1";
+  // empInfo: any;
+  // objPost:any;
+  // data:any;
 
 
-  ngOnInit(){
-    this.getAllEmployees();
-    this.getEmpById();
-    //this.getUserFormData(this.listEmployees)
-    //var opost = new Employees();
-    this.getUserFormData(this.data);
-
-   
+  // ngOnInit(){
+  //   this.getAllEmployees();
+  //   this.getEmpById();
+  //   //this.getUserFormData(this.listEmployees)
+  //   //var opost = new Employees();
+  //   this.getUserFormData(this.data);
 
    
 
+   
 
-  }
 
-  getEmpById() {
-    this._employeeApiService.getEmployeesByParameter(this.empId).subscribe
-    (
-      data=>
-      {
-        this.empInfo=data;
-        console.log('empInfo ', this.empInfo);
+  // }
+
+  // getEmpById() {
+  //   this._employeeApiService.getEmployeesByParameter(this.empId).subscribe
+  //   (
+  //     data=>
+  //     {
+  //       this.empInfo=data;
+  //       console.log('empInfo ', this.empInfo);
         
-      }
-    )
-  }
+  //     }
+  //   )
+  // }
 
-  getAllEmployees(){
-    this._employeeApiService.getEmployees().subscribe
-    (
-      data=>
-      {
-        this.listEmployees=data;
-      }
-    )
-  }
+  // getAllEmployees(){
+  //   this._employeeApiService.getEmployees().subscribe
+  //   (
+  //     data=>
+  //     {
+  //       this.listEmployees=data;
+  //     }
+  //   )
+  // }
 
-  //for post data to the api
+  // //for post data to the api
 
-  getUserFormData(val:any)
-  {
-    // var opost = new Employees()
+  // getUserFormData(val:any)
+  // {
+  //   // var opost = new Employees()
   
-    // opost.designation='as',
-    // opost.employeeFirstName='sa',
-    // opost.employeeLastName='as',
-    // opost.salary=10000,
-    console.warn(val)
+  //   // opost.designation='as',
+  //   // opost.employeeFirstName='sa',
+  //   // opost.employeeLastName='as',
+  //   // opost.salary=10000,
+  //   console.warn(val)
      
-    this._employeeApiService.saveEmployees(val).subscribe(data=>{
-        //console.warn(result)
-        this.objPost=data;
-        console.warn(data)
+  //   this._employeeApiService.saveEmployees(val).subscribe(data=>{
+  //       //console.warn(result)
+  //       this.objPost=data;
+  //       console.warn(data)
 
-      }
-    )
+  //     }
+  //   )
    
-  } 
+  // } 
 
 
 }

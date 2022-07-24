@@ -45,7 +45,9 @@ export class ContactApiService {
     {
       //return this.httpClient.post(`/api/Employee/SaveEmployees`,data);
       //http://localhost:14251/api/Employee/SaveEmployees
-      return this.httpClient.post("http://localhost:14251/api/Contact/SaveContact",data);
+      //http://localhost:5001/api/Contact/SaveContact
+
+      return this.httpClient.post("http://localhost:5001/api/Contact/SaveContact",data);
     }
   
 }
